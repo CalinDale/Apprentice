@@ -5,3 +5,6 @@
 bin/
 build/
 lib/
+
+# Licensed things that shouldn't go in a public git repo
+addons/licensed_things
