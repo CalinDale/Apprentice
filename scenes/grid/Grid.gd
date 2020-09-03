@@ -19,7 +19,7 @@ func _ready():
 #	pass
 
 
-func _on_requested_move(entity: PlayerBrain, movement_goal: Vector2) -> void:
+func _on_requested_move(entity: Player, movement_goal: Vector2) -> void:
 	
 	var cell_start = world_to_map(entity.position)
 	var cell_target = cell_start + movement_goal
