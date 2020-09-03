@@ -1,37 +1,39 @@
 class_name Player
 extends Node2D
 
-signal decided_move
-
-const CELL_SIZE = 64
+signal requested_move(entity, movement_goal)
 
 var movement_goal := Vector2.ZERO
 var is_my_turn := true
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("entitys")
 	
+
 
 func _input(event: InputEvent) -> void:
 	if(is_my_turn):
 		movement_goal = get_movement_goal()
 
 
+# Replace with a signal response when it is my turn
 func _physics_process(delta: float) -> void:
 	take_turn()
 
 
+func movement_result(success: bool) -> void:
+	if success:
+		print("I moved")
+	else:
+		print("bump")
+	movement_goal = Vector2.ZERO
+
+
 func take_turn() -> void:
 	if movement_goal:
-		handle_movement()
-
-
-func handle_movement() -> bool:
-	print(movement_goal)
-	position += movement_goal * CELL_SIZE
-	movement_goal = Vector2.ZERO
-	return true
+		emit_signal("requested_move", self, movement_goal)
 
 
 func get_movement_goal() -> Vector2:

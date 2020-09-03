@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Player.gd"
+"path": "res://scenes/player/Player.gd"
 } ]
 _global_script_class_icons={
 "GitAPI": "",
@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Apprentice"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://scenes/game/Game.tscn"
 config/icon="res://icon.png"
 
 [gdnative]

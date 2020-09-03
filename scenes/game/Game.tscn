@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/licensed_things/RPG Graphics Pack - Sprites/Human (Front)/Full/player_97.png" type="Texture" id=1]
+[ext_resource path="res://addons/licensed_things/RPG Graphics Pack - Sprites/Monster/Monsters/monster_75.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/Player.gd" type="Script" id=3]
+[ext_resource path="res://scenes/grid/Grid.gd" type="Script" id=4]
+
+[node name="Game" type="Node"]
+
+[node name="Grid" type="TileMap" parent="."]
+format = 1
+script = ExtResource( 4 )
+
+[node name="Player" type="Node2D" parent="Grid"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Grid/Player"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="Grid/Player/Sprite"]
+offset = Vector2( 32, 32 )
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="Monster" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+centered = false
