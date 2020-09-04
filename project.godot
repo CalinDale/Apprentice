@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://scenes/entitys/player/player.gd"
+}, {
+"base": "Reference",
+"class": "Terrain",
+"language": "GDScript",
+"path": "res://scenes/terrain/terrain.gd"
 } ]
 _global_script_class_icons={
 "Entity": "",
 "GitAPI": "",
 "Grid": "",
-"Player": ""
+"Player": "",
+"Terrain": ""
 }
 
 [application]
