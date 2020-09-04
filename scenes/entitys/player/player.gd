@@ -1,11 +1,7 @@
 class_name Player
-extends Node2D
-
-signal requested_move(entity, movement_goal)
+extends Entity
 
 var movement_goal := Vector2.ZERO
-var is_my_turn := true
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,10 +16,10 @@ func _input(event: InputEvent) -> void:
 
 # Replace with a signal response when it is my turn
 func _physics_process(delta: float) -> void:
-	take_turn()
+	_take_turn()
 
 
-func movement_result(success: bool) -> void:
+func _movement_result(success: bool) -> void:
 	if success:
 		print("I moved")
 	else:
@@ -31,7 +27,7 @@ func movement_result(success: bool) -> void:
 	movement_goal = Vector2.ZERO
 
 
-func take_turn() -> void:
+func _take_turn() -> void:
 	if movement_goal:
 		emit_signal("requested_move", self, movement_goal)
 

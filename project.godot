@@ -9,25 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://scenes/entitys/entity/entity.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
 }, {
-"base": "Node2D",
+"base": "TileMap",
+"class": "Grid",
+"language": "GDScript",
+"path": "res://scenes/grid/grid.gd"
+}, {
+"base": "Entity",
 "class": "Player",
 "language": "GDScript",
-"path": "res://scenes/player/Player.gd"
+"path": "res://scenes/entitys/player/player.gd"
 } ]
 _global_script_class_icons={
+"Entity": "",
 "GitAPI": "",
+"Grid": "",
 "Player": ""
 }
 
 [application]
 
 config/name="Apprentice"
-run/main_scene="res://scenes/game/Game.tscn"
+run/main_scene="res://scenes/game/game.tscn"
 config/icon="res://icon.png"
 
 [gdnative]
